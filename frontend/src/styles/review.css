@@ -1,0 +1,82 @@
+#main-con-review {
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url("../images/background3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#main-con-review .quiz-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  align-content: center;
+  justify-content: center;
+}
+
+#main-con-review h2 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+#main-con-review #options-container {
+  margin-bottom: 20px;
+  text-align: left; /* Align options to the left */
+}
+
+#main-con-review .option {
+  display: block;
+  margin: 10px 0;
+  text-align: left; /* Ensure each option label is aligned left */
+}
+
+#main-con-review .navigation-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#main-con-review button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 10px; /* Add spacing between buttons */
+}
+
+#main-con-review #prevBtn {
+  background-color: #007bff;
+  color: white;
+}
+
+#main-con-review #nextBtn {
+  background-color: #28a745;
+  color: white;
+}
+
+#main-con-review #endBtn {
+  background-color: #dc3545;
+  color: white;
+  display: none;
+}
+
+/* Move buttons outside of the quiz container */
+#main-con-review .quiz-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35%;
+  height: 50%;
+  font-size: 1.3rem;
+}
