@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 import "../styles/stats.css";
 import axios from "axios";
-import address from "./address";
+import address from ".bin/address";
 import { useLocation } from "react-router-dom";
 
 export default function Stats() {

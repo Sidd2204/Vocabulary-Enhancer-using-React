@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../styles/homepage.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
-import address from "./address";
+import address from ".bin/address";
 
 function Homepage() {
   const [username, setUsername] = useState("");

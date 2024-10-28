@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/review.css";
 import axios from "axios";
-import address from "./address";
+import address from ".bin/address";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Review() {

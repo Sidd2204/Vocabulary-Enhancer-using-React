@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import address from "./address";
+import address from ".bin/address";
 import "../styles/loginpage.css";
 import { useNavigate } from "react-router-dom";
 

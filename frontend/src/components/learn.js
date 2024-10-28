@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/learn.css";
 import axios from "axios";
-import address from "./address";
+import address from ".bin/address";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Learn() {
