@@ -10,7 +10,6 @@ export default function Review() {
   ]);
   const [currQ, setCurrQ] = useState(0);
   const [selectedOption, setSelectedOption] = useState("");
-  const [answers, setAnswers] = useState([]);
   const location = useLocation();
   let username = location.pathname.split("/");
   username = username[username.length - 1];
