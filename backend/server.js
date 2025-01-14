@@ -6,7 +6,7 @@ const path = require("path");
 
 app.use(express.json());
 app.use(cors());
-app.use(express.static("build"));
+app.use(express.static("builtapp"));
 
 const conn = mysql.createConnection({
   host: "localhost",
@@ -276,7 +276,7 @@ app.get("/api/getMasteredWords/:username", (req, res) => {
 });
 
 app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  res.sendFile(path.join(__dirname, "builtapp", "index.html"));
 });
 
 const PORT = 5000;

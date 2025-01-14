@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/review.css";
 import axios from "axios";
-import address from ".bin/address";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Review() {
@@ -20,7 +19,7 @@ export default function Review() {
     async function fetchWords() {
       //Get mastered words
       const masteredReq = await axios.get(
-        address + "/api/getMasteredWords/" + username
+        process.env.REACT_APP_API_ADDRESS + "/api/getMasteredWords/" + username
       );
       const words = masteredReq.data;
       console.log("Mastered Words", words);

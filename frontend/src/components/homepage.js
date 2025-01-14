@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "../styles/homepage.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
-import address from ".bin/address";
 
 function Homepage() {
   const [username, setUsername] = useState("");
@@ -54,7 +53,9 @@ function Homepage() {
 
     async function getStreak() {
       const streakReq = await axios.get(
-        address + "/api/getStreaks/" + un[un.length - 1]
+        process.env.REACT_APP_API_ADDRESS +
+          "/api/getStreaks/" +
+          un[un.length - 1]
       );
 
       console.log("Streak req:", streakReq.data);

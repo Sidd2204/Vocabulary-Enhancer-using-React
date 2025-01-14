@@ -7,8 +7,19 @@ import Learn from "./components/learn";
 import Stats from "./components/stats";
 import Profile from "./components/profile";
 import Review from "./components/review";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    const testFunc = async () => {
+      console.log(
+        "Hello, current address is: ",
+        process.env.REACT_APP_API_ADDRESS
+      );
+    };
+    testFunc();
+  }, []);
+
   return (
     <div>
       <BrowserRouter>

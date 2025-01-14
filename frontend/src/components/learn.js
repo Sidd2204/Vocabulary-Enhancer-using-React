@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/learn.css";
 import axios from "axios";
-import address from ".bin/address";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Learn() {
@@ -24,21 +23,25 @@ function Learn() {
     async function fetchReq() {
       //GET WORDS
       const wdReq = await axios.get(
-        address + "/api/getwords/" + un[un.length - 1]
+        process.env.REACT_APP_API_ADDRESS + "/api/getwords/" + un[un.length - 1]
       );
       setWords(wdReq.data);
       console.log("Initial Words Fetch:", wdReq.data);
 
       //GET STREAKS
       const streaksReq = await axios.get(
-        address + "/api/getStreaks/" + un[un.length - 1]
+        process.env.REACT_APP_API_ADDRESS +
+          "/api/getStreaks/" +
+          un[un.length - 1]
       );
       setStreaks(streaksReq.data);
       console.log("Initial Streak Fetch:", streaksReq.data);
 
       //GET SCORES
       const scoresReq = await axios.get(
-        address + "/api/getScores/" + un[un.length - 1]
+        process.env.REACT_APP_API_ADDRESS +
+          "/api/getScores/" +
+          un[un.length - 1]
       );
       let scores = scoresReq.data;
       scores.score1 = scores.score2;
@@ -51,7 +54,9 @@ function Learn() {
 
       //GET USERLEVEL
       const userlevelReq = await axios.get(
-        address + "/api/getUserlevel/" + un[un.length - 1]
+        process.env.REACT_APP_API_ADDRESS +
+          "/api/getUserlevel/" +
+          un[un.length - 1]
       );
       setUserlevel(userlevelReq.data);
       console.log("Initial Userlevel Fetch:", userlevelReq.data);
@@ -111,7 +116,10 @@ function Learn() {
       console.log("Final Userlevel Post:", userlevel);
 
       //Post word req
-      const wordPost = await axios.post(address + "/api/updateWords", words);
+      const wordPost = await axios.post(
+        process.env.REACT_APP_API_ADDRESS + "/api/updateWords",
+        words
+      );
       if (wordPost.data.status !== "ok") {
         alert("Something went wrong while updating words");
         return;
@@ -119,7 +127,7 @@ function Learn() {
 
       //Post streaks
       const streaksPost = await axios.post(
-        address + "/api/updateStreaks",
+        process.env.REACT_APP_API_ADDRESS + "/api/updateStreaks",
         streaks
       );
       if (streaksPost.data.status !== "ok") {
@@ -129,7 +137,7 @@ function Learn() {
 
       //Post scores
       const scoresPost = await axios.post(
-        address + "/api/updateScores",
+        process.env.REACT_APP_API_ADDRESS + "/api/updateScores",
         scores
       );
       if (scoresPost.data.status !== "ok") {
@@ -139,7 +147,7 @@ function Learn() {
 
       //Post Userlevel
       const userlevelPost = await axios.post(
-        address + "/api/updateUserlevel",
+        process.env.REACT_APP_API_ADDRESS + "/api/updateUserlevel",
         userlevel
       );
       if (userlevelPost.data.status !== "ok") {

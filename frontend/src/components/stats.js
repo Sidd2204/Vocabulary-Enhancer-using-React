@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 import "../styles/stats.css";
 import axios from "axios";
-import address from ".bin/address";
 import { useLocation } from "react-router-dom";
 
 export default function Stats() {
@@ -19,7 +18,9 @@ export default function Stats() {
 
   useEffect(() => {
     async function fetchStats() {
-      const statsReq = await axios.get(address + "/api/getStats/" + username);
+      const statsReq = await axios.get(
+        process.env.REACT_APP_API_ADDRESS + "/api/getStats/" + username
+      );
       console.log("Stats Initial Fetch", statsReq.data);
       setFetchedData(statsReq.data);
     }

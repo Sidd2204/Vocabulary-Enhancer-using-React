@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/profile.css";
 import axios from "axios";
-import address from ".bin/address";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Profile() {
@@ -24,7 +23,7 @@ export default function Profile() {
   useEffect(() => {
     async function profileFetch() {
       const profileReq = await axios.get(
-        address + "/api/getProfile/" + username
+        process.env.REACT_APP_API_ADDRESS + "/api/getProfile/" + username
       );
       console.log("Initial Profile Fetch", profileReq.data);
       setProfileData(profileReq.data);
@@ -41,7 +40,7 @@ export default function Profile() {
     console.log("Final Profile Post", profileData);
 
     const profReq = await axios.post(
-      address + "/api/updateProfile",
+      process.env.REACT_APP_API_ADDRESS + "/api/updateProfile",
       profileData
     );
     if (profReq.data.status === "ok") {

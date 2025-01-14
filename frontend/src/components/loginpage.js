@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import address from ".bin/address";
 import "../styles/loginpage.css";
 import { useNavigate } from "react-router-dom";
 
@@ -47,7 +46,10 @@ function LoginPage() {
     }
 
     //create req
-    const loginReq = await axios.post(address + "/api/login", logDetails);
+    const loginReq = await axios.post(
+      process.env.REACT_APP_API_ADDRESS + "/api/login",
+      logDetails
+    );
 
     //check if user exists
     console.log(loginReq.data);
@@ -80,7 +82,10 @@ function LoginPage() {
 
     //create req
     console.log("Register:", details);
-    const regisReq = await axios.post(address + "/api/register", details);
+    const regisReq = await axios.post(
+      process.env.REACT_APP_API_ADDRESS + "/api/register",
+      details
+    );
     console.log("Response from regisReq", regisReq.data);
 
     //check for integrity error
@@ -118,28 +123,28 @@ function LoginPage() {
     if (!details.registerPassword) {
       return;
     }
-    // if (details.registerPassword.length < 8) {
-    //   setErrorMsg("Password must have 8 characters");
-    //   setBtnDisabled(true);
-    //   return;
-    // }
-    // const regx = /([!-/]|[:-@])/;
-    // const regx2 = /[\d]/;
-    // if (!regx.test(details.registerPassword)) {
-    //   setErrorMsg("Password must have special characters");
-    //   setBtnDisabled(true);
-    //   return;
-    // }
-    // if (!regx2.test(details.registerPassword)) {
-    //   setErrorMsg("Password must have numeric characters");
-    //   setBtnDisabled(true);
-    //   return;
-    // }
-    // if (details.registerPassword !== details.registerConfirmPassword) {
-    //   setErrorMsg("Password do not match");
-    //   setBtnDisabled(true);
-    //   return;
-    // }
+    if (details.registerPassword.length < 8) {
+      setErrorMsg("Password must have 8 characters");
+      setBtnDisabled(true);
+      return;
+    }
+    const regx = /([!-/]|[:-@])/;
+    const regx2 = /[\d]/;
+    if (!regx.test(details.registerPassword)) {
+      setErrorMsg("Password must have special characters");
+      setBtnDisabled(true);
+      return;
+    }
+    if (!regx2.test(details.registerPassword)) {
+      setErrorMsg("Password must have numeric characters");
+      setBtnDisabled(true);
+      return;
+    }
+    if (details.registerPassword !== details.registerConfirmPassword) {
+      setErrorMsg("Password do not match");
+      setBtnDisabled(true);
+      return;
+    }
     setErrorMsg("");
     setBtnDisabled(false);
   }, [details]);
