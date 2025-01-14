@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1f38fcd2.css",
+    "main.js": "/static/js/main.7e3f5f13.js",
+    "static/media/h2.png": "/static/media/h2.cd6b67c1b18908e56861.png",
+    "static/media/h3.png": "/static/media/h3.31da4bd23ed28bf331bb.png",
+    "static/media/h1.png": "/static/media/h1.e68bea63b3fab48029c3.png",
+    "static/media/background3.jpg": "/static/media/background3.a70deb19ab0c0ab38b36.jpg",
+    "static/media/cta1.jpg": "/static/media/cta1.f4c13fdfdc390d0b7128.jpg",
+    "static/media/background2.jpg": "/static/media/background2.a63367735b782cf7696c.jpg",
+    "static/media/auto1.png": "/static/media/auto1.75c13333d08140aee2c8.png",
+    "static/media/review1.png": "/static/media/review1.db90d8e110db52a19b3f.png",
+    "static/media/logo.png": "/static/media/logo.574480f1961d8071875e.png",
+    "static/media/user.png": "/static/media/user.724b79cd582c0a0944ee.png",
+    "static/media/profile.png": "/static/media/profile.0d14c6999b4a5c8e86a7.png",
+    "static/media/streak.png": "/static/media/streak.1edd2da7cf1a804afe80.png",
+    "static/media/score.png": "/static/media/score.5059f032ac17b508e6e9.png",
+    "static/media/logout.png": "/static/media/logout.a78baedd6fc26d3affb0.png",
+    "index.html": "/index.html",
+    "main.1f38fcd2.css.map": "/static/css/main.1f38fcd2.css.map",
+    "main.7e3f5f13.js.map": "/static/js/main.7e3f5f13.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1f38fcd2.css",
+    "static/js/main.7e3f5f13.js"
+  ]
+}

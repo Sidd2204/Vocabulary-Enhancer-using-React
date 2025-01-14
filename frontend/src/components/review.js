@@ -6,7 +6,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Review() {
   const [quizData, setQuizData] = useState([
-    { question: "propitiate", options: ["", "", "", ""], correct: 0 },
+    { question: "No Mastered Words", options: ["", "", "", ""], correct: 0 },
   ]);
   const [currQ, setCurrQ] = useState(0);
   const [selectedOption, setSelectedOption] = useState("");
@@ -24,6 +24,15 @@ export default function Review() {
       );
       const words = masteredReq.data;
       console.log("Mastered Words", words);
+
+      //Insufficient Mastered Words
+      if (words.length === 0) {
+        alert(
+          "Continue learning to master more Words and unlock this exercise <3"
+        );
+        navigate("/homepage/" + username);
+        return;
+      }
 
       //Create Quiz Data
       let quizData = [];
